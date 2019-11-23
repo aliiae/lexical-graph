@@ -1,10 +1,10 @@
 # Lexical graph | WordNet visualisation
 
-**Demo**: https://lexical-graph.herokuapp.com/
+**Live demo**: https://lexical-graph.herokuapp.com/
 
-Technologies: TypeScript, MongoDB, Express, React, Node, D3.
-Word lemmatisation is done with wink-lemmatizer.
-Data processing is based on https://github.com/fluhus/wordnet-to-json.
+Technologies: *TypeScript, MongoDB, Express, React, Node, D3*.
+Word lemmatisation is done with *wink-lemmatizer*.
+Data processing is based on [wordnet-to-json](https://github.com/fluhus/wordnet-to-json).
 
 To build the project locally using [Docker](https://www.docker.com) and [docker-compose](https://docs.docker.com/compose/install),
 run `docker-compose up` from the root directory.
