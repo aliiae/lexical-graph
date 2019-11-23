@@ -1,0 +1,69 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+.content__title {
+  height: 2.2em;
+  font-weight: 300 !important;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 1.8rem !important;
+  line-height: 1.35 !important;
+  text-align: center;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 24px;
+}
+
+.content__title a {
+  font-size: 1rem;
+}
+
+.viz {
+  flex-flow: column;
+  height: 100%;
+}
+
+.switches {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.switches li {
+  display: inline;
+  margin: .2rem;
+}
+
+.switches li label::before {
+  content: '\0020';
+}
+
+.switches li a {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.ant-col {
+  display: flex;
+  justify-content: center;
+}
+
+.ant-input-search {
+  padding: 1rem 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .ant-input-search {
+    max-width: 30vw;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .switches {
+    padding: 0 0 0 2rem;
+  }
+
+  .switches li {
+    flex: 1 0 25%;
+  }
+}

@@ -1,0 +1,52 @@
+.graph {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  font-size: 14px;
+}
+
+.node {
+  cursor: pointer;
+  fill-opacity: 1;
+  stroke-opacity: 0.8;
+  stroke-width: 1.5;
+}
+
+.node:hover {
+  stroke: #4e4e4e;
+  fill-opacity: 0.6;
+}
+
+.label a {
+  text-decoration: none;
+}
+
+.label a:hover {
+  fill: #000;
+}
+
+.label-background {
+  fill-opacity: 1;
+  stroke: #fff;
+  stroke-width: 0.5em;
+}
+
+.edge {
+  stroke: #999;
+  stroke-opacity: 0.3;
+}
+
+.tooltip {
+  position: absolute;
+  background: white;
+  padding: 5px;
+  border: 1px solid #e8e8e8;
+  pointer-events: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .graph {
+    min-height: 50vh;
+  }
+}

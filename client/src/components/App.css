@@ -1,0 +1,71 @@
+@import '~antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display&display=swap');
+
+body {
+  background-color: #f0f2f5;
+}
+
+.main__content {
+  background-color: #fafafa;
+  padding: .5rem;
+}
+
+.content__row {
+  padding: 0 0 1rem 0;
+}
+
+.container__content {
+  margin-top: 0.5rem;
+}
+
+a {
+  text-decoration: underline;
+}
+
+ol, ul {
+  padding-left: 1rem;
+}
+
+.ant-card {
+  min-width: 95vw;
+}
+
+.ant-spin {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .main__content {
+    margin: 1.5rem 1.5rem 0 1.5rem;
+  }
+
+  .ant-card {
+    min-width: unset;
+    /*full screen minus footer (64), header (64), search (72), main content margins (16)*/
+    height: 95vh;
+    overflow: scroll;
+  }
+
+  .description {
+    padding: 0 .5rem;
+    margin-bottom: unset;
+  }
+
+  .viz {
+    padding: 0 .5rem;
+  }
+
+  main {
+    /*max-height: calc(100vh - 128px);*/
+  }
+
+  .main__content {
+    /*max-height: calc(100vh - 135px);*/
+    overflow: scroll;
+  }
+
+  .container__switches {
+    height: 6em;
+  }
+
+}

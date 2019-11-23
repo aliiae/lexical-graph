@@ -1,0 +1,104 @@
+h1 {
+  text-align: left;
+}
+
+li span:first-of-type {
+  display: block;
+}
+
+.description {
+  justify-content: start;
+  flex-flow: column;
+  overflow-wrap: break-word;
+  height: 100%;
+  overflow: auto;
+  margin-bottom: 0.5rem;
+}
+
+.description h2 > span {
+  color: rgba(0, 0, 0, 0.55);
+  font-size: 1.1rem;
+  font-weight: 300;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.description h2 > span a {
+  text-decoration: underline;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.description h2 > span:first-of-type {
+  color: rgba(0, 0, 0, 0.85);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.description p {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.85)
+}
+
+.description ol li {
+  margin: 0 0 .1rem 0;
+}
+
+.show-button {
+  margin-left: 0.8rem;
+  vertical-align: middle;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;;
+}
+
+.query {
+  font-family: 'Playfair Display', serif;
+  display: block;
+  margin-bottom: 0.5em;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.35;
+}
+
+.gloss li {
+  margin-top: .5rem !important;
+}
+
+.gloss li:first-of-type {
+  margin-top: 0 !important;
+}
+
+.gloss__links {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gloss__links li {
+  display: inline;
+}
+
+.gloss__links li:after {
+  content: '\002C\0020';
+}
+
+.gloss__links li:last-child:after {
+  content: '';
+}
+
+.gloss__examples {
+  font-style: italic;
+  list-style: none;
+  padding: 0;
+}
+
+.gloss__examples li {
+  margin-top: 0.1rem !important;
+}
+
+.gloss__examples li span::first-letter {
+  text-transform: uppercase;
+}
+

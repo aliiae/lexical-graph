@@ -1,0 +1,33 @@
+header a {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #E6E6E6;
+  text-transform: lowercase;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+header a:hover {
+  color: #E6E6E6;
+}
+
+.logo::before {
+  content: '◌ ';
+  font-size: 2.5rem;
+  top: -15px;
+  left: 25px;
+  position: absolute;
+  color: #E6E6E6;
+}
+
+footer {
+  /*position: sticky;*/
+  text-align: center;
+  height: 64px;
+  padding: 1rem !important;
+}
+
+footer > p {
+  margin: 0;
+  padding: 0.5em 0 0 0;
+}
