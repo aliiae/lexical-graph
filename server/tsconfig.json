@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "allowJs": true,
+    "module": "commonjs",
+    "lib": [
+      "esnext",
+      "dom",
+      "es2015.promise"
+    ],
+    "outDir": "./dist",
+    "skipLibCheck": true,
+    "removeComments": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": false,
+    "types": [
+      "node", "express"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "src/client"
+  ],
+  "include": [
+    "src/**/*",
+    "src/*"
+  ]
+}
