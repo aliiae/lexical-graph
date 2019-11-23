@@ -1,0 +1,50 @@
+version: '3.7'
+
+services:
+  db:
+    image: mongo:latest
+    restart: always
+    volumes:
+      - wordnet_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=Wordnet
+    expose:
+      - 27017
+    ports:
+      - 27017:27017
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    command: [sh, -c, "npm run start"]
+    volumes:
+      - node_modules_server:/usr/src/app/node_modules
+    environment:
+      - DO_IMPORT_WORDNET=0
+      - NODE_ENV=development
+    expose:
+      - 8080
+    ports:
+      - "8080:8080"
+    restart: on-failure
+    depends_on:
+      - db
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    command: [sh, -c, "npm run start"]
+    volumes:
+      - node_modules_client:/usr/src/app/node_modules
+    ports:
+      - "3000:3000"
+    restart: on-failure
+    depends_on:
+      - server
+
+volumes:
+  wordnet_data:
+  node_modules_client:
+  node_modules_server:
