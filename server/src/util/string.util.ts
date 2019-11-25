@@ -7,21 +7,26 @@ export const capitalize = (string: string): string => (
 );
 
 const spaceRegexp = new RegExp(/\s+/, 'g');
+const underscoreRegexp = new RegExp('_', 'g');
 const nonAlphaRegexp = new RegExp(/[^0-9a-z\-.'\s]/, 'g');
 /**
- * Lowercases, removes non-alpha characters, replaces spaces with underscores.
+ * Lowercases, removes non-alphanumeric characters.
  */
 export const processQuery = (query: string): string => (
   query
     .toLowerCase()
+    .replace(underscoreRegexp, ' ')
     .replace(nonAlphaRegexp, '')
     .trim()
-    .replace(spaceRegexp, '_')
+);
+
+export const replaceSpaces = (query: string): string => (
+    query.replace(spaceRegexp, '_')
 );
 
 /**
  * Retrieves all possible unique lemmata for the given word
- * (if not found, returns the word itself to fallback to Wordnet's lemma lookup).
+ * (if not found, returns the word itself to fallback to WordNet's lemma lookup).
  */
 export const getLemma = (word: string): string[] => {
   const lemmata: string[] = [...new Set([
@@ -29,13 +34,13 @@ export const getLemma = (word: string): string[] => {
     lemmatize.adjective(word),
     lemmatize.verb(word),
   ])].filter(Boolean);
-  return lemmata.length > 0 ? lemmata.map((lemma) => processQuery(lemma)) : [processQuery(word)];
+  return lemmata.length > 0 ? lemmata.map((lemma) => replaceSpaces(lemma)) : [replaceSpaces(word)];
 };
 
 export const getPromisePerLemma = (
   word: string, callbacks: ((word: string, args?: any) => any)[], args?: any[],
 ): Promise<any>[] => {
-  const possibleLemmata = getLemma(word);
+  const possibleLemmata = getLemma(processQuery(word));
   const promises: Promise<any>[] = [];
   possibleLemmata.forEach((lemma) => {
     callbacks.forEach((cb) => {
@@ -61,4 +66,4 @@ export const splitGlossToExamples = (gloss: string): { gloss: string; examples?:
   return { gloss: parts[0], examples };
 };
 
-export const replaceUnderscores = (word: string): string => word.replace(/_/g, ' ');
+export const replaceUnderscores = (word: string): string => word.replace(underscoreRegexp, ' ');
