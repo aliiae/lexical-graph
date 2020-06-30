@@ -1,5 +1,9 @@
 # Lexical graph | WordNet visualisation
 
+<p align="center">
+  <img height="300px" src="https://raw.githubusercontent.com/aliiae/lexical-graph/master/images/graph.png" alt="Screenshot of a graph with lexical relations">
+</p>
+
 **Live demo**: https://lexical-graph.herokuapp.com/
 
 Technologies: *TypeScript, MongoDB, Express, React, Node, D3*.
