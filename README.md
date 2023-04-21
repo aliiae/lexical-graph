@@ -4,8 +4,6 @@
   <img height="300px" src="https://raw.githubusercontent.com/aliiae/lexical-graph/master/images/graph.png" alt="Screenshot of a graph with lexical relations">
 </p>
 
-**Live demo**: https://lexical-graph.herokuapp.com/
-
 Technologies: *TypeScript, MongoDB, Express, React, Node, D3*.
 Word lemmatisation is done with *wink-lemmatizer*.
 Data processing is based on [wordnet-to-json](https://github.com/fluhus/wordnet-to-json).
